@@ -1,0 +1,6 @@
+AUROC: 0.8684
+AUPRC: 0.8499
+Accuracy: 0.7754
+Sensitivity (Recall): 0.7656
+Specificity: 0.7853
+Matthews Correlation Coefficient (MCC): 0.5509

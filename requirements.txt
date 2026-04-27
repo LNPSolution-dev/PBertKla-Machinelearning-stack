@@ -1,0 +1,7 @@
+tensorflow==2.4.0
+tensorflow_addons==0.12.1
+numpy==1.19.5
+pandas==1.2.3
+h5py==2.10.0       # ✅ 호환되는 버전
+lxml==4.3.2
+pyfaidx==0.5.8
