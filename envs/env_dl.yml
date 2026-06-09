@@ -1,0 +1,22 @@
+# Stage-1 environment: ProteinBERT fine-tuning + OOF metafeature generation
+# (PBertKla_v3.py, generate_oof.py, run_DL_infer.py)
+# This is the environment that actually produced the deep-learning results
+# (TensorFlow 2.12), and supersedes the legacy requirements.txt (TF 2.4).
+name: pbertkla_dl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+      - tensorflow==2.12.0
+      - tensorflow-addons==0.12.1
+      - numpy==1.23.5
+      - pandas==1.2.3
+      - h5py==2.10.0
+      - scikit-learn==1.3.2
+      - lxml==4.3.2
+      - pyfaidx==0.5.8
+# GPU note: on CUDA 12 / Hopper (e.g. H200), set
+#   LD_LIBRARY_PATH to the env's nvidia cudnn/cublas libs and
+#   CUDA_CACHE_PATH to a writable dir so TF 2.12 PTX-JITs for sm_90.

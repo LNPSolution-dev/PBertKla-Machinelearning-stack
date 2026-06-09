@@ -1,0 +1,24 @@
+# Stage-2 environment: ML stacking (run_ML.py) + figures/tables
+# Pure CPU; no GPU required. Pinned to reproduce the reported metrics to the
+# last digit. Python 3.10 (3.8-3.11 all work).
+name: pbertkla_ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - pandas==2.2.2
+      - scikit-learn==1.2.2
+      - lightgbm==4.3.0
+      - xgboost==2.0.3
+      - catboost==1.2.5
+      - optuna==3.6.1
+      - joblib==1.4.2
+      - matplotlib==3.8.4
+      - shap==0.45.0          # SHAP feature importance (R2-13)
+# Determinism: results are fixed by (data + seed=42 + these pinned versions +
+# thread count). Multithreaded LightGBM/XGBoost/CatBoost may vary AUROC by
+# ~+/-0.001 without changing any conclusion; set thread count to 1 for
+# bitwise reproduction (PBK_THREADS=1).
