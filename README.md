@@ -66,12 +66,27 @@ top using a methodologically sound **Out-Of-Fold (OOF) meta-feature** strategy.
     └── PBertKla_ML_pipeline_change_report.pdf
 ```
 
+## Reproducibility
+
+For complete, plug-and-play reproduction (pinned environments, seeds, fixed
+splits, checkpoint download, one-command run, and a script → table/figure map
+including the peer-review revision analyses), see
+**[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)**. Quick start:
+
+```bash
+conda env create -f envs/env_dl.yml     # Stage 1 (ProteinBERT fine-tuning, TF 2.12, GPU)
+conda env create -f envs/env_ml.yml     # Stage 2 (ML stacking, CPU)
+bash reproduce.sh                      # DL -> OOF -> ML stacking -> figures
+```
+Revision analyses (R2-3 leakage splits, R2-6 benchmarks, R1-4 AF2-vs-AF3, R2-8/R2-9
+statistics) are in [`revision/`](revision/README.md).
+
 ## Prerequisites
 
-- Python 3.10+ (DL) / Python 3.12+ (ML)
-- TensorFlow 2.x for ProteinBERT
-- LightGBM, XGBoost, CatBoost, Optuna, scikit-learn, pandas, openpyxl
-- See `requirements.txt`.
+- Environments: **`envs/env_dl.yml`** (TensorFlow **2.12**, the version that
+  produced the DL results) and **`envs/env_ml.yml`** (CPU stacking). The legacy
+  `requirements.txt` (TF 2.4) is kept only for reference.
+- LightGBM, XGBoost, CatBoost, Optuna, scikit-learn, pandas (pinned in `env_ml.yml`).
 
 The DL pipeline uses a pretrained ProteinBERT checkpoint
 `epoch_92400_sample_23500000.pkl` (~192 MB).
