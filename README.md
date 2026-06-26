@@ -1,5 +1,14 @@
 # PBertKla-stack: ProteinBERT + ML Stacking for Lysine Lactylation Site Prediction
 
+[![Paper](https://img.shields.io/badge/Paper-IJMS%202026-1f6feb)](https://www.mdpi.com/1422-0067/27/13/5761)
+[![DOI](https://img.shields.io/badge/DOI-10.3390%2Fijms27135761-0a7bbb)](https://doi.org/10.3390/ijms27135761)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> 📄 **Published in** _International Journal of Molecular Sciences_ (2026), **27**(13), 5761.
+> Jin et al., *"Training PBertKla on an Integrated Multi-Source Dataset with a Machine-Learning
+> Layer for Lysine Lactylation Site Prediction."*
+> 🔗 **Read the paper:** https://www.mdpi.com/1422-0067/27/13/5761
+
 A two-stage stacking pipeline that fine-tunes **ProteinBERT** for protein lysine
 lactylation (Kla) site prediction and stacks **LightGBM / XGBoost / CatBoost** on
 top using a methodologically sound **Out-Of-Fold (OOF) meta-feature** strategy.
@@ -179,4 +188,25 @@ MIT License — see `LICENSE`.
 
 ## Citation
 
-(Add citation here once the paper is published)
+If you use this code, the dataset, or the trained models, please cite:
+
+> Jin, S.B.; Park, J.; Lee, S.D.; Han, J.H.; Myung, S.-H.; Park, K.; Yun, J.
+> Training PBertKla on an Integrated Multi-Source Dataset with a Machine-Learning Layer
+> for Lysine Lactylation Site Prediction.
+> *International Journal of Molecular Sciences* **2026**, *27*(13), 5761.
+> https://doi.org/10.3390/ijms27135761
+
+```bibtex
+@article{jin2026pbertkla,
+  title   = {Training PBertKla on an Integrated Multi-Source Dataset with a Machine-Learning Layer for Lysine Lactylation Site Prediction},
+  author  = {Jin, Seung Beom and Park, Junghee and Lee, Summer Dabin and Han, Ji Hye and Myung, Seung-Hyun and Park, Kichul and Yun, Jisoo},
+  journal = {International Journal of Molecular Sciences},
+  volume  = {27},
+  number  = {13},
+  pages   = {5761},
+  year    = {2026},
+  doi     = {10.3390/ijms27135761},
+  url     = {https://www.mdpi.com/1422-0067/27/13/5761},
+  publisher = {MDPI}
+}
+```
